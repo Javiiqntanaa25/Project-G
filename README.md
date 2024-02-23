@@ -31,16 +31,11 @@ Explora una amplia gama de personajes. Con la capacidad de probar diferentes com
 
 ### Diagrama de casos de uso
 
+![diagrama clases de uso ](https://github.com/Javiiqntanaa25/Project-G/assets/117390402/59741f01-69a8-4823-8aba-543832ddae17)
 
+### Diagrama de entidad-relación
 
-### Diagrama de clases (!)
-
-
-
-
-
-### Diagrama de entidad-relación (!)
-
+![diagrama entidad relación](https://github.com/Javiiqntanaa25/Project-G/assets/117390402/26f6daf7-0d8f-4370-9d78-06f1ca8f1f87)
 
 
 ## Estructura del proyecto
