@@ -1,6 +1,17 @@
 <?php
     $id_team = $_GET['id_team'];
-    $char = $_GET['character']
+    $char = $_GET['character'];
+    $data = array (
+        array('Elemento','Cantidad'),
+        array('Pyro',$elementPyro),
+        array('Hydro',$elementHydro),
+        array('Cryo',$elementCryo),
+        array('Geo',$elementAnemo),
+        array('Anemo',$elementAnemo),
+        array('Dendro',$elementDendro),
+        array('Electro',$elementElectro)
+    );
+    $json_data = json_encode($data)
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -9,9 +20,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./build/css/index.css">
     <script src="./js/buscador.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+      
+      
+
+    
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable(<?php echo $json_data; ?>);
+
+        var options = {
+          backgroundColor: 'transparent',
+          legend: {
+                textStyle:{
+                    color: 'white',
+                }
+          },
+          slices: {
+            0: {color: 'red'},
+            1: {color: 'blue'},
+            2: {color: '#87CEEB'},
+            3: {color: 'brown'},
+            4: {color: '#40E0D0'},
+            5: {color: 'green'},
+            6: {color: 'purple'},
+          }
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+
     <title>ProjectG</title>
 </head>
 <body>
+
     <div class="background"></div>
     <header>
         <div class="Titulo">
@@ -116,8 +164,12 @@
             </a>
         <?php } ?>
         </div>
+                       
     </main>
+    <div id="piechart" style="width: 450px; height: 250px; padding-left: 40%;" ></div>     
 </body>
+
+
 <script src="../../build/js/fondorandom.js"></script>
 
 </html>    

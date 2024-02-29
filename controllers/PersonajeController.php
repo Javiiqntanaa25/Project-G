@@ -36,6 +36,14 @@ class PersonajeController {
             $personajes = Personaje::all();
         }
 
+        $elementpyro= Personaje::countPyro();
+        $elementhydro= Personaje::countHydro();
+        $elementcryo= Personaje::countCryo();
+        $elementgeo= Personaje::countGeo();
+        $elementanemo= Personaje::countanemo();
+        $elementdendro= Personaje::countDendro();
+        $elementelectro= Personaje::countElectro();
+
         // Renderizado de la vista con los datos necesarios
         $router->render('paginas/characters', [
             'personajes' => $personajes,
@@ -45,6 +53,13 @@ class PersonajeController {
             'rareza'=>$rareza,
             'pj1'=> $pj1,
             'posEquipo' => $posEquipo,
+            'elementPyro' =>$elementpyro,
+            'elementHydro' =>$elementhydro,
+            'elementCryo' => $elementcryo,
+            'elementGeo' =>$elementgeo,
+            'elementAnemo' =>$elementanemo,
+            'elementDendro' =>$elementdendro,
+            'elementElectro' =>$elementelectro,
         ]);
     }
 }

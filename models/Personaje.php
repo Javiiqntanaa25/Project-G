@@ -139,4 +139,48 @@ class Personaje extends ActiveRecord {
     public function busqueda($nombre){
         // Implementa la lógica de búsqueda
     }
+
+    public static function countPyro(){
+        $querypyro= "SELECT count(*) as pyro FROM characters WHERE element='Pyro'";
+        $resultado = self::$db->query($querypyro);
+        $fila = $resultado->fetch();
+        return $fila['pyro'];
+    }
+    public static function countHydro(){
+        $queryhydro= "SELECT count(*) as hydro FROM characters WHERE element='Hydro'";
+        $resultado = self::$db->query($queryhydro);
+        $fila = $resultado->fetch();
+        return $fila['hydro'];
+    }
+    public static function countCryo(){
+        $querycryo= "SELECT count(*)as cryo FROM characters WHERE element='Cryo'";
+        $resultado = self::$db->query($querycryo);
+        $fila = $resultado->fetch();
+        return $fila['cryo'];
+    }
+    public static function countAnemo(){
+        $queryanemo= "SELECT count(*) as anemo FROM characters WHERE element='Anemo'";
+        $resultado = self::$db->query($queryanemo);
+        $fila = $resultado->fetch();
+        return $fila['anemo'];
+    }
+    public static function countGeo(){
+        $querygeo= "SELECT count(*) as geo FROM characters WHERE element='Geo'";
+        $resultado = self::$db->query($querygeo);
+        $fila = $resultado->fetch();
+        return $fila['geo'];
+    }
+    public static function countDendro(){
+        $querydendro= "SELECT count(*) as dendro FROM characters WHERE element='Dendro'";
+        $resultado = self::$db->query($querydendro);
+        $fila = $resultado->fetch();
+        return $fila['dendro'];
+    }
+    public static function countElectro(){
+        $queryelectro= "SELECT count(*) as electro FROM characters WHERE element='Electro'";  
+        $resultado = self::$db->query($queryelectro);
+        $fila = $resultado->fetch();
+        return $fila['electro'];
+    }
+
 }
